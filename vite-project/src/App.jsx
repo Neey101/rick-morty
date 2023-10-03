@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Characters } from "./components/Characters";
+import { AllCharacters } from "./components/AllCharacters";
 
 function App() {
   return (
     <>
-      <Characters> </Characters>
+      <AllCharacters />
     </>
   );
 }

@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
+import { useCharacter } from "../hooks/useCharacter";
 import "../app.css";
 
-export function Characters() {
-  const [personajes, setPersonajes] = useState([]);
+export const AllCharacters = () => {
+  const { getAllCharacters, personajes } = useCharacter();
 
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character")
-      .then((res) => res.json())
-      .then((data) => setPersonajes(data.results));
-  }, []);
+    getAllCharacters();
+  });
 
   return <>Hola carlita :B</>;
 
@@ -21,4 +20,4 @@ export function Characters() {
       </li>
     ))}
   </ul>;
-}
+};
